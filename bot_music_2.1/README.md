@@ -1,4 +1,4 @@
-adicionado a função de saida automatica por inatividade de membros e inatividade e alterações no comando para desconectar o bot do canal de voz:
+adicionado a função de saida automatica por inatividade de membros ou à não utilização do bot e alterações no comando para desconectar o bot do canal de voz:
 
 disconnect --> leave
 
