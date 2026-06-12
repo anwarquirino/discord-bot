@@ -1,38 +1,34 @@
-# 🤖 Discord Bot
+# 🤖 Discord Music Bot
 
-Bot para Discord em **Python**, com comandos básicos e um módulo de **música** que evoluiu ao longo de várias versões. A reprodução usa `yt-dlp` para buscar áudio e `spotipy` para integração com playlists do Spotify.
+Bot de música para Discord em **Python**. Toca áudio do **YouTube** (via `yt-dlp`) e aceita links do **Spotify** (track, álbum ou playlist), resolvendo cada faixa no YouTube. Inclui auto-desconexão por inatividade.
 
 > 🚧 Projeto em desenvolvimento / estudo.
 
-## ✨ Funcionalidades
+## ✨ Comandos
 
-- Comandos básicos (`!ping`)
-- Reprodução de música a partir do YouTube (`yt-dlp`)
-- Integração com a API do Spotify (`spotipy`)
-- Configuração via variáveis de ambiente (`.env`)
+| Comando | Descrição |
+|---------|-----------|
+| `!ping` | Testa a latência do bot |
+| `!play <busca ou link>` | Toca do YouTube; aceita link de track/álbum/playlist do Spotify |
+| `!pause` | Pausa a reprodução |
+| `!resume` | Retoma a reprodução |
+| `!stop` | Para a música |
+| `!leave` | Desconecta o bot do canal de voz |
 
-## 🗂️ Estrutura
-
-```
-discord-bot/
-├── bot.py              # Bot base (comandos simples, ex.: !ping)
-├── bot_music/          # Módulo de música — versões iterativas
-├── bot_music_2.0/
-├── bot_music_2.1/
-└── bot_music_2.2/      # Versão mais recente (yt-dlp + spotipy)
-```
-
-> As pastas `bot_music_*` representam a evolução do módulo de música. Para usar a versão mais completa, rode a partir de `bot_music_2.2/`.
+Auto-desconecta após **5 minutos** de inatividade.
 
 ## 🛠️ Tecnologias
 
 - Python 3.12+
 - [discord.py](https://discordpy.readthedocs.io/)
-- [yt-dlp](https://github.com/yt-dlp/yt-dlp) — extração de áudio
+- [yt-dlp](https://github.com/yt-dlp/yt-dlp) — extração de áudio do YouTube
 - [spotipy](https://spotipy.readthedocs.io/) — API do Spotify
 - python-dotenv — variáveis de ambiente
+- **FFmpeg** — necessário no sistema para reproduzir áudio
 
 ## ▶️ Como executar
+
+**Pré-requisito:** ter o [FFmpeg](https://ffmpeg.org/download.html) instalado e disponível no `PATH`.
 
 ```bash
 git clone https://github.com/anwarquirino/discord-bot.git
@@ -45,19 +41,35 @@ venv\Scripts\activate         # Windows
 pip install -r requirements.txt
 ```
 
-Crie um arquivo `.env` na raiz com suas credenciais:
+Crie um arquivo `.env` na raiz (use o `.env.example` como base):
 
 ```env
 TOKEN=seu_token_do_discord
-SPOTIPY_CLIENT_ID=seu_client_id
-SPOTIPY_CLIENT_SECRET=seu_client_secret
+SPOTIFY_CLIENT_ID=seu_client_id
+SPOTIFY_CLIENT_SECRET=seu_client_secret
 ```
 
-Execute o bot base:
+Execute:
 
 ```bash
 python bot.py
 ```
+
+## 🗂️ Estrutura
+
+```
+discord-bot/
+├── bot.py              # Bot completo (música YouTube/Spotify + !ping)
+├── requirements.txt
+├── .env.example
+├── LICENSE
+└── README.md
+```
+
+## 📜 Histórico de versões
+
+O módulo de música evoluiu por várias iterações (Lavalink → yt-dlp → auto-disconnect → Spotify).
+As versões antigas estão preservadas na branch [`archive/music-versions`](https://github.com/anwarquirino/discord-bot/tree/archive/music-versions).
 
 ## 📜 Licença
 
