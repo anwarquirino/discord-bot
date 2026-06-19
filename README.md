@@ -1,10 +1,10 @@
-# 🤖 Discord Music Bot
+# Discord Music Bot
 
 Bot de música para Discord em **Python**. Toca áudio do **YouTube** (via `yt-dlp`) e aceita links do **Spotify** (track, álbum ou playlist), resolvendo cada faixa no YouTube. Inclui auto-desconexão por inatividade.
 
-> 🚧 Projeto em desenvolvimento / estudo.
+> Projeto em desenvolvimento / estudo.
 
-## ✨ Comandos
+## Comandos
 
 | Comando | Descrição |
 |---------|-----------|
@@ -17,7 +17,7 @@ Bot de música para Discord em **Python**. Toca áudio do **YouTube** (via `yt-d
 
 Auto-desconecta após **5 minutos** de inatividade.
 
-## 🛠️ Tecnologias
+## Tecnologias
 
 - Python 3.12+
 - [discord.py](https://discordpy.readthedocs.io/)
@@ -26,7 +26,7 @@ Auto-desconecta após **5 minutos** de inatividade.
 - python-dotenv — variáveis de ambiente
 - **FFmpeg** — necessário no sistema para reproduzir áudio
 
-## ▶️ Como executar
+## Como executar
 
 **Pré-requisito:** ter o [FFmpeg](https://ffmpeg.org/download.html) instalado e disponível no `PATH`.
 
@@ -55,7 +55,7 @@ Execute:
 python bot.py
 ```
 
-## 🗂️ Estrutura
+## Estrutura
 
 ```
 discord-bot/
@@ -66,11 +66,11 @@ discord-bot/
 └── README.md
 ```
 
-## 📜 Histórico de versões
+## Histórico de versões
 
 O módulo de música evoluiu por várias iterações (Lavalink → yt-dlp → auto-disconnect → Spotify).
 As versões antigas estão preservadas na branch [`archive/music-versions`](https://github.com/anwarquirino/discord-bot/tree/archive/music-versions).
 
-## 📜 Licença
+## Licença
 
 MIT — sinta-se livre para usar e modificar.
